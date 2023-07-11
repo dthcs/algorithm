@@ -1,10 +1,3 @@
-# Example usage
-# graph = [
-#     [(1, 10), (2, 15)],  # node 0
-#     [(2, 25)],           # node 1
-#     [(0, 10), (1, 30)]   # node 2
-# ]
-
 INF = float('inf')
 
 def floyd_warshall(graph):
@@ -30,18 +23,8 @@ def floyd_warshall(graph):
     for u in range(n):
         if dist[u][u] < min_cycle_length:
             min_cycle_length = dist[u][u]
-            # cycle = get_cycle(u, next_node)
 
     return min_cycle_length
-
-# def get_cycle(start, next_node):
-#     cycle = [start]
-#     node = next_node[start][start]
-#     while node != start:
-#         cycle.append(node)
-#         node = next_node[node][start]
-#     cycle.append(start)
-#     return cycle
 
 t = int(input())
 for i in range(t):
