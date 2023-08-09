@@ -46,11 +46,11 @@ class Solution {
                 
 
                 // Check and remove smaller numbers in the same row or column
-                for (int j = safeNumbers.size() - 1; j >= 0; j--) {
-                    NumberWithAddress number = safeNumbers.get(j);
+                for (int a = safeNumbers.size() - 1; a >= 0; a--) {
+                    NumberWithAddress number = safeNumbers.get(a);
                     if (number.i == r - 1 || number.j == c - 1) {
                         if (number.num < x) {
-                            safeNumbers.remove(j);
+                            safeNumbers.remove(a);
                         }
                     }
                 }
