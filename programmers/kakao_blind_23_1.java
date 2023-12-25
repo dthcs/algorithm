@@ -1,7 +1,9 @@
+package programmers;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class Solution {
+class kakao_blind_23_1 {
     public int[] solution(String today, String[] terms, String[] privacies) {
         ArrayList<Integer> answer = new ArrayList<>();
         HashMap<String, Integer> map = new HashMap<>();

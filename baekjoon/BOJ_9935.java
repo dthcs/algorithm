@@ -1,7 +1,9 @@
+package baekjoon;
+
 import java.io.*;
 import java.util.Stack;
 
-public class Main{
+public class BOJ_9935{
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line = br.readLine();
