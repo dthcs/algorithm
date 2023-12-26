@@ -6,11 +6,10 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class BOJ_6603 {
-    static int n;
+    static int k;
     static int[] arr;
     static boolean[] visit;
     static int[] result;
-    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader((new InputStreamReader(System.in)));
@@ -18,35 +17,36 @@ public class BOJ_6603 {
         while(true){
             StringTokenizer st = new StringTokenizer(br.readLine());
 
-            n = Integer.parseInt(st.nextToken());
-            if(n == 0)
+            k = Integer.parseInt(st.nextToken());
+            if(k == 0)
                 break;
 
-            arr = new int[n];
-            for(int i = 0; i < n; i++){
+            arr = new int[k];
+            for(int i = 0; i < k; i++){
                 arr[i] = Integer.parseInt(st.nextToken());
             }
             result = new int[6];
-            visit = new boolean[n];
+            visit = new boolean[k];
             dfs(0,0);
 
-            System.out.println(sb);
+            System.out.println();
         }
     }
 
     static void dfs(int start, int depth){
         if(depth == 6){
-            for(int val:result){
-                sb.append(val).append(" ");
+            for(int i = 0; i < k; i++){
+                if(visit[i]){
+                    System.out.print(arr[i]+" ");
+                }
             }
-            sb.append("\n");
+            System.out.println();
             return;
         }
 
-        for(int i = start; i < n; i++){
+        for(int i = start; i < k; i++){
             if(!visit[i]){
                 visit[i] = true;
-                result[depth] = arr[i];
                 dfs(i, depth+1);
                 visit[i] = false;
             }
